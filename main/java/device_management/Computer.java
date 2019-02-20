@@ -10,6 +10,7 @@ public class Computer {
     private IOutput outputDevice;
     private IInput keyboard;
     private IInput mouse;
+    private String dataStream;
 
     public Computer(int ram, int hddSize, IOutput outputDevice, IInput keyboard, IInput mouse) {
         this.ram = ram;
@@ -17,6 +18,7 @@ public class Computer {
         this.outputDevice = outputDevice;
         this.keyboard = keyboard;
         this.mouse = mouse;
+        this.dataStream = null;
     }
 
     public int getRam() {
@@ -30,6 +32,10 @@ public class Computer {
     public IOutput getOutputDevice() {
         return this.outputDevice;
     }
+    public String outputDataStream() {
+        return this.outputData(this.dataStream);
+    }
+
 
     public String outputData(String data) {
         return this.outputDevice.outputData(data);
@@ -55,7 +61,8 @@ public class Computer {
         this.mouse = mouse;
     }
     public String inputData(String data, IInput device){
-        return device.sendData(data);
+        this.dataStream = device.sendData(data);
+        return this.dataStream;
     }
 
 }

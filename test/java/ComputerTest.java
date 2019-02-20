@@ -82,6 +82,14 @@ public class ComputerTest {
     @Test
     public void canInputViaKeyBoard(){
         assertEquals("Typey Typey Typey, keyboard goes...Mark says hello", computer.inputData("Mark says hello", keyboard));
+        System.out.println();
+    }
+    @Test
+    public void canOuputViaDataStream(){
+
+        String data = computer.inputData("Mark says hello", keyboard);
+        assertEquals("Typey Typey Typey, keyboard goes...Mark says hello is now on screen", computer.outputDataStream());
+        System.out.println();
     }
 
 }
