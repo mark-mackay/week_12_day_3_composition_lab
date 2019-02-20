@@ -1,8 +1,11 @@
 import behaviours.IOutput;
+import behaviours.IInput;
 import device_management.Computer;
 import device_management.Monitor;
 import device_management.Printer;
 import device_management.Speaker;
+import device_management.Keyboard;
+import device_management.Mouse;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,11 +15,15 @@ import static org.junit.Assert.assertEquals;
 public class ComputerTest {
     Computer computer;
     Monitor monitor;
+    Keyboard keyboard;
+    Mouse mouse;
 
     @Before
     public void before() {
+        keyboard = new Keyboard("IBM", "FX72", "Wired", 125, true, "UK");
+        mouse = new Mouse("Fujitsu", "D1", "Wireless", 3);
         monitor = new Monitor(22, 786432);
-        computer = new Computer(8, 512, monitor);
+        computer = new Computer(8, 512, monitor, keyboard, mouse);
     }
 
     @Test
@@ -49,14 +56,14 @@ public class ComputerTest {
     @Test
     public void canOutputDataViaPrinter(){
         Printer printer = new Printer("Epson", "Stylus", 120, 4);
-        Computer computer = new Computer(8, 512, printer);
+        Computer computer = new Computer(8, 512, printer, keyboard, mouse);
         assertEquals("printing: space invaders", computer.outputData("space invaders"));
     }
 
     @Test
     public void canOutputDataViaSpeaker(){
         Speaker speaker = new Speaker(100);
-        Computer computer = new Computer(8, 512, speaker);
+        Computer computer = new Computer(8, 512, speaker, keyboard, mouse);
         assertEquals("playing: Beep!", computer.outputData("Beep!"));
     }
 

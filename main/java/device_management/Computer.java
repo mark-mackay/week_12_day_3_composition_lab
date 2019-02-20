@@ -17,6 +17,7 @@ public class Computer {
         this.outputDevice = outputDevice;
         this.keyboard = keyboard;
         this.mouse = mouse;
+    }
 
     public int getRam() {
         return this.ram;
@@ -55,5 +56,3 @@ public class Computer {
     }
 
 }
-
-
