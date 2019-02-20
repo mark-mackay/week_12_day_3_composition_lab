@@ -74,4 +74,14 @@ public class ComputerTest {
         assertEquals("printing: space invaders", computer.outputData("space invaders"));
     }
 
+    @Test
+    public void canInputViaMouse(){
+        assertEquals("Clickety Clickety Click Click, mouse goes...Nadja says hello", computer.inputData("Nadja says hello", mouse));
+    }
+
+    @Test
+    public void canInputViaKeyBoard(){
+        assertEquals("Typey Typey Typey, keyboard goes...Mark says hello", computer.inputData("Mark says hello", keyboard));
+    }
+
 }

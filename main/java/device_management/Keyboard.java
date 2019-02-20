@@ -15,7 +15,7 @@ public class Keyboard extends InputDevice implements IInput {
     }
     @Override
     public String sendData(String data) {
-        return "Typey Typey Typey";
+        return "Typey Typey Typey, keyboard goes..." + data;
     }
     public int getKeys() {
         return keys;

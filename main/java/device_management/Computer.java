@@ -54,5 +54,8 @@ public class Computer {
     public void setMouse(IInput mouse) {
         this.mouse = mouse;
     }
+    public String inputData(String data, IInput device){
+        return device.sendData(data);
+    }
 
 }

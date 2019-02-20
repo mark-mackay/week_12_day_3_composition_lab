@@ -15,7 +15,7 @@ public class Mouse extends InputDevice implements IInput {
 
     @Override
     public String sendData(String data) {
-        return "Clickety Clickety Click Click";
+        return "Clickety Clickety Click Click, mouse goes..." + data;
     }
 
     public int getButtons() {
